@@ -34,10 +34,10 @@ class ManagerFilmTest {
         manager.save(ten);
         manager.save(eleven);
 
-        manager.getAll();
+//        manager.getAll();
 
-        Film[] expected = {first, second, third, fourth, fifth, six, seven, eight, nine, ten};
-        Film[] actual = manager.findAll();
+        Film[] expected = {ten, nine, eight, seven, six, fifth, fourth, third, second, first};
+        Film[] actual = manager.getAll();
 
         assertArrayEquals(expected, actual);
 

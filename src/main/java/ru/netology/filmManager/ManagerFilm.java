@@ -29,7 +29,7 @@ public class ManagerFilm {
         } else {
             resultLength = items.length;
         }
-        Film[] items = findAll();
+//        Film[] items = findAll();
         Film[] result = new Film[resultLength];
         for (int i = 0; i < result.length; i++) {
             int index = items.length - i - 1;
