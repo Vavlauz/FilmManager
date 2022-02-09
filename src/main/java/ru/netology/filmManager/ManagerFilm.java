@@ -26,13 +26,11 @@ public class ManagerFilm {
         int resultLength = items.length;
         if (resultLength > limit) {
             resultLength = limit;
-        } else {
-            resultLength = items.length;
         }
 //        Film[] items = findAll();
         Film[] result = new Film[resultLength];
         for (int i = 0; i < result.length; i++) {
-            int index = items.length - i - 1;
+            int index = result.length - i - 1;
             result[i] = items[index];
         }
         return result;

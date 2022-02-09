@@ -34,7 +34,7 @@ class ManagerFilmTest {
         manager.save(ten);
         manager.save(eleven);
 
-//        manager.getAll();
+        manager.getAll();
 
         Film[] expected = {ten, nine, eight, seven, six, fifth, fourth, third, second, first};
         Film[] actual = manager.getAll();
