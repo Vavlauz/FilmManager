@@ -21,12 +21,14 @@ public class ManagerFilm {
 
     }
 
-
     public Film[] getAll() {
         int resultLength = items.length;
         if (resultLength > limit) {
             resultLength = limit;
+        } else {
+            resultLength = items.length;
         }
+
 //        Film[] items = findAll();
         Film[] result = new Film[resultLength];
         for (int i = 0; i < result.length; i++) {
@@ -40,29 +42,42 @@ public class ManagerFilm {
         return items;
     }
 
-    public void removeById(int id) {
-        int length = items.length - 1;
-        Film[] tmp = new Film[length];
-        int index = 0;
-        for (Film item : items) {
-            if (item.getId() != id) {
-                tmp[index] = item;
-                index++;
-            }
-        }
-        items = tmp;
-    }
-
-    public void addById(int id) {
-        int length = items.length + 1;
-        Film[] tmp = new Film[length];
-        int index = 0;
-        for (Film item : items) {
-            if (item.getId() == id) {
-                tmp[index] = item;
-                index++;
-            }
-        }
-        items = tmp;
-    }
+//    public Film findById(int id) {
+//        for (Film item : items) {
+//            if (item.getId() == id) {
+//                return item;
+//            }
+//        }
+//        return null;
+//    }
+//
+//    public void removeAll() {
+//        items = new Film[0];
+//    }
+//
+//    public void removeById(int id) {
+//        int length = items.length - 1;
+//        Film[] tmp = new Film[length];
+//        int index = 0;
+//        for (Film item : items) {
+//            if (item.getId() != id) {
+//                tmp[index] = item;
+//                index++;
+//            }
+//        }
+//        items = tmp;
+//    }
+//
+//    public void addById(int id) {
+//        int length = items.length + 1;
+//        Film[] tmp = new Film[length];
+//        int index = 0;
+//        for (Film item : items) {
+//            if (item.getId() == id) {
+//                tmp[index] = item;
+//                index++;
+//            }
+//        }
+//        items = tmp;
+//    }
 }
