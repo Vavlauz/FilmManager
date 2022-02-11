@@ -48,7 +48,7 @@ public class RepositoryFilm {
         return new Film[0];
     }
 
-    public void removeById(int id) {
+    public Film[] removeById(int id) {
         int length = items.length - 1;
         Film[] tmp = new Film[length];
         int index = 0;
@@ -59,6 +59,7 @@ public class RepositoryFilm {
             }
         }
         items = tmp;
+        return tmp;
     }
 
     public void addById(int id) {

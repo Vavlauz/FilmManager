@@ -57,12 +57,40 @@
             Film[] returned = {};
             doReturn(returned).when(repository).removeAll();
 
-            Film[] expected = {};
-            Film[] actual = manager.removeAllFilms();
+            int expected = 0;
+            int actual = manager.removeAllFilms();
+
+            assertEquals (expected,actual);
+
+            verify(repository).removeAll();
+
+        }
+
+        @Test
+        public void removeById() {
+            Film[] returned = {fourth};
+            doReturn(returned).when(repository).removeById(4);
+
+            Film[] expected = {fourth};
+            Film[] actual = manager.removeByIdFilms(4);
 
             assertArrayEquals (expected,actual);
 
-            verify(repository).removeAll();
+            verify(repository).removeById(4);
+
+        }
+
+        @Test
+        public void findById() {
+            Film returned = fourth;
+            doReturn(returned).when(repository).findById(4);
+
+            Film expected = fourth;
+            Film actual = manager.findByIdFilms(4);
+
+            assertEquals (expected,actual);
+
+            verify(repository).findById(4);
 
         }
 

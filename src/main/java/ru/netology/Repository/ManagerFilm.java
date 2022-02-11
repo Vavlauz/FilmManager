@@ -24,20 +24,21 @@ public class ManagerFilm {
         return result;
     }
 
-    public void removeByIdFilms(int id) {
-        repository.removeById(id);
+    public Film[] removeByIdFilms(int id) {
+        return repository.removeById(id);
     }
 
     public Film[] findAllFilms() {
        return repository.findAll();
     }
 
-    public Film[] removeAllFilms() {
-        return repository.removeAll();
+    public int removeAllFilms() {
+        repository.removeAll();
+        return 0;
     }
 
-    public void findByIdFilms(int id) {
-        repository.findById(id);
+    public Film findByIdFilms(int id) {
+        return repository.findById(id);
     }
 
     public int sum() {
