@@ -14,7 +14,7 @@ public class ManagerFilm {
         repository.save(item);
     }
 
-    public Film[] getAll() {
+    public Film[] getAllFilms() {
         Film[] items = repository.findAll();
         Film[] result = new Film[items.length];
         for (int i = 0; i < result.length; i++) {
@@ -24,20 +24,28 @@ public class ManagerFilm {
         return result;
     }
 
-    public void removeById(int id) {
+    public void removeByIdFilms(int id) {
         repository.removeById(id);
     }
 
-    public void findAll() {
-        repository.findAll();
+    public Film[] findAllFilms() {
+       return repository.findAll();
     }
 
-    public void removeAll() {
-        repository.removeAll();
+    public Film[] removeAllFilms() {
+        return repository.removeAll();
     }
 
-    public void findById(int id) {
+    public void findByIdFilms(int id) {
         repository.findById(id);
+    }
+
+    public int sum() {
+        int result = 0;
+        for (Film item : repository.findAll()) {
+            result = result + item.getProductPrice() * item.getCount();
+        }
+        return result;
     }
 
 }

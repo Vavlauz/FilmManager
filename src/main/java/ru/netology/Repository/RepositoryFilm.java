@@ -44,8 +44,8 @@ public class RepositoryFilm {
         return null;
     }
 
-    public void removeAll() {
-        items = new Film[0];
+    public Film[] removeAll() {
+        return new Film[0];
     }
 
     public void removeById(int id) {
