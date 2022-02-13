@@ -15,21 +15,14 @@ public class RepositoryFilm {
     }
 
     public Film[] getAll() {
-        int resultLength = items.length;
-        if (resultLength > limit) {
-            resultLength = limit;
-        } else {
-            resultLength = items.length;
-        }
-
-//        Film[] items = findAll();
+        int resultLength = Math.min(items.length,limit);                   //Math.min(items.length,limit)
         Film[] result = new Film[resultLength];
         for (int i = 0; i < result.length; i++) {
-            int index = result.length - i - 1;
-            result[i] = items[index];
+            result[i] = items[items.length - i - 1];
         }
         return result;
     }
+
 
     public Film[] findAll() {
         return items;
