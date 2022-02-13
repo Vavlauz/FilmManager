@@ -22,7 +22,7 @@ public class ManagerFilm {
     }
 
     public Film[] getAll() {
-        int resultLength = Math.min(items.length,limit);                   //Math.min(items.length,limit)
+        int resultLength = Math.min(items.length,limit);
         Film[] result = new Film[resultLength];
         for (int i = 0; i < result.length; i++) {
             result[i] = items[items.length - i - 1];
@@ -30,63 +30,8 @@ public class ManagerFilm {
         return result;
     }
 
-//    public Film[] getAll() {
-//        int resultLength = items.length;                   //Math.min(items.length,limit)
-//        if (resultLength > limit) {
-//            resultLength = items.length - (items.length - limit);
-//        } else {
-//            resultLength = items.length;
-//        }
-//
-////        Film[] items = findAll();
-//        Film[] result = new Film[resultLength];
-//        for (int i = 0; i < result.length; i++) {
-//            int index = result.length - i - 1;
-//            result[i] = items[index];
-//        }
-//        return result;
-//    }
-
     public Film[] findAll() {
         return items;
     }
 
-//    public Film findById(int id) {
-//        for (Film item : items) {
-//            if (item.getId() == id) {
-//                return item;
-//            }
-//        }
-//        return null;
-//    }
-//
-//    public void removeAll() {
-//        items = new Film[0];
-//    }
-//
-//    public void removeById(int id) {
-//        int length = items.length - 1;
-//        Film[] tmp = new Film[length];
-//        int index = 0;
-//        for (Film item : items) {
-//            if (item.getId() != id) {
-//                tmp[index] = item;
-//                index++;
-//            }
-//        }
-//        items = tmp;
-//    }
-//
-//    public void addById(int id) {
-//        int length = items.length + 1;
-//        Film[] tmp = new Film[length];
-//        int index = 0;
-//        for (Film item : items) {
-//            if (item.getId() == id) {
-//                tmp[index] = item;
-//                index++;
-//            }
-//        }
-//        items = tmp;
-//    }
 }
