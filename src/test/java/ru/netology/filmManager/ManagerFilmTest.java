@@ -36,7 +36,7 @@ class ManagerFilmTest {
         manager.save(twelve);
 
 
-        Film[] expected = {ten, nine, eight, seven, six, fifth, fourth, third, second, first};
+        Film[] expected = {twelve, eleven, ten, nine, eight, seven, six, fifth, fourth, third};
         Film[] actual = manager.getAll();
 
         assertArrayEquals(expected, actual);
@@ -73,7 +73,7 @@ class ManagerFilmTest {
         manager.save(twelve);
 
 
-        Film[] expected1 = {fifth, fourth, third, second, first};
+        Film[] expected1 = {twelve, eleven, ten, nine, eight};
         Film[] actual1 = manager.getAll();
 
         assertArrayEquals(expected1, actual1);
